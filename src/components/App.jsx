@@ -49,8 +49,6 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    console.log('App componentDidMount');
-
     const contact = localStorage.getItem('contacts');
     if (contact !== null) {
       const parseContact = JSON.parse(contact);
@@ -60,8 +58,6 @@ export class App extends Component {
   }
 
   componentDidUpdate(_, prevState) {
-    console.log('App componentDidUpdate');
-
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
@@ -70,7 +66,6 @@ export class App extends Component {
   componentWillUnmount() {}
 
   render() {
-    console.log('App render');
     const { contacts, filter } = this.state;
 
     const normalizeFilter = filter.toLowerCase();
